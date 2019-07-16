@@ -22,7 +22,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
         result.data.allWordpressPost.edges.forEach(edge => {
           createPage({
-            path: edge.node.slug,
+            path: `${edge.node.slug}/`,
             component: StoreTemplate,
             context: {
               slug: edge.node.slug,
