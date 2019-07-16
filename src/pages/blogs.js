@@ -22,7 +22,12 @@ const blogs = (node) => (
     {node.data.allWordpressPost.edges.map((data, index) => (
         <li>
           <Link to={`${data.node.slug}`} className="clear-fix">
-          {data.node.title}
+          {/* {data.node.title} */}
+          <span
+              dangerouslySetInnerHTML={{
+                __html: data.node.title,
+              }}
+            />
         </Link>
       </li>
     ))}
