@@ -5,7 +5,7 @@ import React from "react"
 const Footer = ({ siteTitle }) => (
   <footer
     style={{
-      background: `rebeccapurple`,
+      background: `#282828`,
     }}
   >
     <div

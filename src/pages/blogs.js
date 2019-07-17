@@ -9,6 +9,7 @@ export const pageQuery = graphql` {
       node {
         slug
         title
+        excerpt
       }
     }
   }
@@ -18,20 +19,29 @@ const blogs = (node) => (
   <Layout>
     <SEO title="Contact US" />
     <h1>Blogs</h1>
-    <ul>
-    {node.data.allWordpressPost.edges.map((data, index) => (
-        <li>
-          <Link to={`${data.node.slug}`} className="clear-fix">
-          {/* {data.node.title} */}
-          <span
-              dangerouslySetInnerHTML={{
-                __html: data.node.title,
-              }}
-            />
-        </Link>
-      </li>
-    ))}
-    </ul>
+    <div className="container">
+      <div class="row">
+        {node.data.allWordpressPost.edges.map((data, index) => (
+          <div class="col-4 col-6-medium col-12-small">
+            <article class="box style2">
+            <Link to={`${data.node.slug}`} className="clear-fix">
+              {/* <a href="#" class="image featured"></a> */}
+              <h3
+                dangerouslySetInnerHTML={{
+                  __html: data.node.title,
+                }}
+              />
+              </Link>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: data.node.excerpt,
+                }}
+              />
+            </article>
+          </div>
+        ))}
+      </div>
+    </div>
   </Layout>
 )
 
