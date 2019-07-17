@@ -15,8 +15,12 @@ export const pageQuery = graphql `query User($slug: String!) {
 const BlogPostTemplate = (node) => (
   <Layout>
     <div>
-      {node.data.wordpressPost.title}
-      {node.data.wordpressPost.content}
+      <h1 dangerouslySetInnerHTML={{
+      __html: node.data.wordpressPost.title,
+      }} />
+      <div dangerouslySetInnerHTML={{
+      __html: node.data.wordpressPost.content,
+      }} />
     </div>
   </Layout>
   
