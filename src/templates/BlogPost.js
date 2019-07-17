@@ -21,6 +21,11 @@ const BlogPostTemplate = (node) => (
       <p dangerouslySetInnerHTML={{
       __html: node.data.wordpressPost.content,
       }} />
+
+      <p dangerouslySetInnerHTML={{
+      __html: node.data.wordpressPost.title,
+      }} />
+
     </div>
   </Layout>
   
