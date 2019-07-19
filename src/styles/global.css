@@ -584,7 +584,7 @@ footer>p {
 }
 
 .row>* {
-	padding: 25px 0 0 25px;
+	padding: 25px 0 0 0;
 }
 
 .row.gtr-uniform {

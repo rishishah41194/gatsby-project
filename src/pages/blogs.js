@@ -10,6 +10,11 @@ export const pageQuery = graphql` {
         slug
         title
         excerpt
+        _links {
+          wp_attachment {
+            href
+          }
+        }
       }
     }
   }
@@ -17,6 +22,7 @@ export const pageQuery = graphql` {
 
 const blogs = (node) => (
   <Layout>
+    {console.log( node.data.allWordpressPost.edges )}
     <SEO title="Contact US" />
     <h1>Blogs</h1>
     <div className="container">
@@ -32,7 +38,7 @@ const blogs = (node) => (
                 }}
               />
               </Link>
-              <p
+              <div
                 dangerouslySetInnerHTML={{
                   __html: data.node.excerpt,
                 }}
